@@ -1,5 +1,4 @@
-export const BASE_API = 'http://159.89.188.16';
-//export const BASE_API = 'http://127.0.0.1:8000';
+export const BASE_API = process.env.REACT_APP_BASE_API || 'http://127.0.0.1:8000';
 
 export const TOKEN = 'token';
 
