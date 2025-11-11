@@ -1,0 +1,59 @@
+.login-form-admin {
+  width: 100% !important;
+  margin: 0 auto !important;
+  max-width: 400px !important;
+  
+  .ui.input input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+    
+    &:focus {
+      border-color: #d4af37;
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+    }
+  }
+  
+  .ui.button.primary {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    
+    &:hover {
+      background: linear-gradient(135deg, #e6c555, #d4af37);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+  }
+  
+  .forgot-password-link {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 14px;
+    transition: color 0.3s;
+    
+    &:hover {
+      color: #d4af37;
+      text-decoration: underline;
+    }
+  }
+  
+  .field {
+    margin-bottom: 15px !important;
+    
+    &.error {
+      input {
+        border-color: #e74c3c !important;
+      }
+    }
+  }
+}

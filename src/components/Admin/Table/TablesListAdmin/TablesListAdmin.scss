@@ -1,0 +1,28 @@
+.table-list-admin{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 70px;
+    margin-bottom: 10px;
+
+    &__reload{
+        margin: 0;
+        position: absolute;
+        top: -30px;
+        right: 70px;
+        z-index: 10;
+    }
+
+    &__reload-toggle{
+        position: absolute !important;
+        top: -20px;
+        right: 150px;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+
+        span {
+            margin-right: 20px;
+        }
+    }
+}

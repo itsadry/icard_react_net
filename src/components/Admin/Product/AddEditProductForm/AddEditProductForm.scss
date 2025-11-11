@@ -1,0 +1,27 @@
+.add-edit-product-form{
+
+    .description{
+        margin-top: 100px;
+    }
+
+    &__active{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .ui.checkbox{
+            margin-right: 20px;
+        }
+    }
+
+    .ui.primary.button{
+        margin-top: 50px;
+    }
+
+    .ui.image{
+        margin-top: 10px;
+        width: 200px ;
+        margin: 0 auto;
+    }
+}

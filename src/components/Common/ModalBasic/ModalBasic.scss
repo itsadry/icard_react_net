@@ -1,0 +1,37 @@
+.modal-basic {
+    width: 80vw !important; /* Aumentar el ancho para pantallas más grandes */
+    max-width: 500px !important; 
+    height: auto !important;
+    max-height: 70vh !important; /* Limitar la altura máxima */
+    position: fixed !important;
+    top: 50% !important; 
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1000 !important;
+    background: white !important;
+    padding: 20px !important; /* Aumentar el padding para que el contenido tenga espacio */
+    border-radius: 15px !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1) !important;
+    overflow-y: auto !important; /* Hacer que el contenido sea desplazable si es necesario */
+    max-width: 90%; /* Para pantallas más pequeñas */
+}
+
+.modal-basic img {
+    max-width: 100%; /* Ajusta la imagen al tamaño del modal */
+    height: auto;
+    margin-top: 20px; /* Agrega un poco de espacio por encima de la imagen */
+}
+
+.modal-basic .content {
+    overflow-y: auto !important; /* Permitir desplazamiento si el contenido es muy grande */
+}
+
+.modal-basic .ui.button {
+    margin-top: 20px; /* Espacio entre los botones */
+}
+
+/* Aseguramos que los botones se alineen bien en la parte inferior */
+.modal-basic .actions {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,137 @@
+// override/theme.scss
+
+/* Colores para el Modo Claro */
+$light-background: #ffffff;
+$light-text: #000000;
+$light-button-background: #007bff;
+$light-button-text: #ffffff;
+$light-header-background: #ffffff;
+$light-header-text: #000000;
+$light-container-background: #ffffff;
+$light-login-background: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+$light-card-background: #ffffff;
+
+/* Colores para el Modo Oscuro */
+$dark-background: #121212;
+$dark-text: #ffffff;
+$dark-button-background: #444444;
+$dark-button-text: #ffffff;
+$dark-header-background: #333333;
+$dark-header-text: #ffffff;
+$dark-container-background: #1e1e1e;
+$dark-login-background: linear-gradient(315deg, #121212 0%, #2c3e50 74%);
+$dark-card-background: #2c2c2c;
+
+/* Estilos comunes */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: $light-background;
+  color: $light-text;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: $light-header-background;
+  color: $light-header-text;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  background-color: $light-button-background;
+  color: $light-button-text;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Modo Oscuro */
+body.dark-theme {
+  background-color: $dark-background;
+  color: $dark-text;
+
+  header {
+    background-color: $dark-header-background;
+    color: $dark-header-text;
+  }
+
+  button {
+    background-color: $dark-button-background;
+    color: $dark-button-text;
+  }
+
+  /* Estilos específicos para el login */
+  .login-admin {
+    background-color: $dark-background;
+    background-image: $dark-login-background;
+
+    &__content {
+      background-color: $dark-container-background;
+      color: $dark-text;
+      box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  /* Estilos para el layout de admin */
+  .admin-layout {
+    background-color: $dark-background;
+    
+    &__menu {
+      background-color: $dark-header-background;
+    }
+
+    &__main-content {
+      background-color: $dark-background;
+    }
+  }
+
+  /* Estilos para el layout de cliente */
+  .client-layout-bg {
+    background-color: $dark-background;
+
+    .client-layout {
+      background-color: $dark-container-background;
+      
+      &__header {
+        background-color: $dark-header-background;
+        color: $dark-text;
+        
+        h1, a {
+          color: $dark-text;
+        }
+      }
+    }
+  }
+
+  /* Tarjetas y elementos de UI */
+  .ui.card, .ui.cards .card {
+    background-color: $dark-card-background;
+    color: $dark-text;
+    
+    .header, .meta, .description {
+      color: $dark-text;
+    }
+  }
+
+  /* Elementos del menú */
+  .ui.menu {
+    background-color: $dark-header-background;
+    
+    .item {
+      color: $dark-text;
+    }
+  }
+
+  /* Inputs */
+  .ui.input input, .ui.form input, .ui.form textarea {
+    background-color: $dark-container-background;
+    color: $dark-text;
+    border-color: #444;
+  }
+}

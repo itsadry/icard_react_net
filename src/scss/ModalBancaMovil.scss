@@ -1,0 +1,95 @@
+/* Modal básico centrado */
+.ui.modal {
+    max-width: 600px; /* Máximo ancho */
+    width: 100%; /* Ancho ajustado al 100% dentro del máximo */
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado completo (horizontal y vertical) */
+    z-index: 1050; /* Asegura que el modal esté por encima de otros elementos */
+  }
+  
+  /* Encabezado del modal */
+  .modal .header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Contenido del modal */
+  .modal .content {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  .modal .content p {
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  
+  /* Ajustar el tamaño del QR */
+  .modal .content img {
+    width: 200px; /* Asegurar un tamaño adecuado para el QR */
+    height: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  
+  /* Acciones del modal (botones) */
+  .modal .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .modal .actions .ui.button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .modal .actions .primary {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .modal .actions .negative {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  /* Botón de Banca Móvil */
+  .ui.button.primary {
+    background-color: #0066cc;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .ui.button.primary:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Para los títulos y texto de la cuenta */
+  h3 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  

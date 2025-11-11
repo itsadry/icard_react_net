@@ -1,0 +1,24 @@
+@import './override/index.scss';
+@import './darkmode.scss';
+@import './modern-theme.scss';
+@import './components/data-display.scss';
+
+/* Estilos de fuentes para el restaurante */
+@font-face {
+  font-family: 'GoldGarden';
+  src: local('Cinzel'), local('Playfair Display');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Estilos globales de la aplicación */
+.app-container {
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animaciones para transiciones suaves */
+* {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+

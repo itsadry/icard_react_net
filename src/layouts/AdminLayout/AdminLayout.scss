@@ -1,0 +1,104 @@
+.admin-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    position: relative;
+
+    &__menu {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    &__main-content {
+        flex: 1;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    // Modo oscuro
+    &.dark-mode {
+        background-color: #1a1a1a;
+        
+        &__menu {
+            background-color: #2c2c2c;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+    }
+    
+    // Media queries para diferentes tamaños de pantalla
+    @media (max-width: 1200px) {
+        .side-menu-admin .side-menu {
+            width: 220px;
+        }
+        
+        .side-menu-admin .content {
+            width: calc(100% - 220px);
+            margin-left: 220px;
+        }
+        
+        .side-menu-admin.collapsed .content {
+            width: calc(100% - 70px);
+            margin-left: 70px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .side-menu-admin .side-menu {
+            width: 200px;
+        }
+        
+        .side-menu-admin .content {
+            width: calc(100% - 200px);
+            margin-left: 200px;
+            padding: 15px 20px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .side-menu-admin .side-menu {
+            width: 70px;
+        }
+        
+        .side-menu-admin .content {
+            width: calc(100% - 70px);
+            margin-left: 70px;
+            padding: 15px;
+        }
+        
+        .top-menu-admin__logo {
+            width: 200px !important;
+        }
+        
+        .top-menu-admin__logo .logo-text {
+            font-size: 24px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .side-menu-admin .content {
+            padding: 10px;
+        }
+        
+        .top-menu-admin__logo {
+            width: 180px !important;
+            padding: 0 10px !important;
+        }
+        
+        .top-menu-admin__logo .logo-text {
+            font-size: 22px !important;
+        }
+        
+        .top-menu-admin .user-info .user-name {
+            display: none;
+        }
+    }
+}

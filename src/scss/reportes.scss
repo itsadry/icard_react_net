@@ -1,0 +1,363 @@
+// Importar fuentes si es necesario
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Variables
+$primary-color: #36a2eb;
+$secondary-color: #ff6384;
+$tertiary-color: #4bc0c0;
+$accent-color: #ffce56;
+$text-dark: #2d3748;
+$text-light: #718096;
+$border-color: #e2e8f0;
+$background-light: #f8f9fa;
+$background-dark: #f1f5f9;
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// Estilos globales
+.dashboard-container {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    color: $text-dark;
+    background-color: $background-light;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.dashboard-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    color: $text-dark;
+}
+
+// Tabs de navegación
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    
+    @media (max-width: 480px) {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+}
+
+.tab-button {
+    background-color: white;
+    border: 1px solid $border-color;
+    color: $text-light;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition;
+    
+    &:hover {
+        background-color: rgba($primary-color, 0.1);
+        color: $primary-color;
+    }
+    
+    &.active {
+        background-color: $primary-color;
+        color: white;
+        border-color: $primary-color;
+    }
+}
+
+// Secciones
+.dashboard-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+    
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0 0 10px;
+    }
+    
+    .section-description {
+        color: $text-light;
+        margin: 0;
+        font-size: 14px;
+    }
+}
+
+// Tarjetas
+.chart-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: $shadow-md;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: $transition;
+    
+    h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    &:hover {
+        box-shadow: $shadow-lg;
+        transform: translateY(-2px);
+    }
+    
+    &.full-width {
+        width: 100%;
+    }
+}
+
+// Contenedor de gráficos
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Loader
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    
+    .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid $primary-color;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+    
+    p {
+        margin-top: 15px;
+        color: $text-light;
+        font-weight: 500;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
+
+// Sección de predicción
+.prediction-section {
+    .prediction-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: $shadow-md;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        transition: $transition;
+        
+        &:hover {
+            box-shadow: $shadow-lg;
+        }
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+    
+    .prediction-result {
+        flex: 1;
+        min-width: 250px;
+        padding: 20px;
+        background-color: $background-dark;
+        border-radius: 8px;
+        text-align: center;
+        
+        h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: $text-light;
+            margin-bottom: 15px;
+        }
+        
+        .prediction-value {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .prediction-product {
+            color: $tertiary-color;
+        }
+        
+        .prediction-placeholder {
+            color: $text-light;
+            font-size: 16px;
+        }
+    }
+    
+    .prediction-inputs {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            
+            label {
+                margin-bottom: 8px;
+                font-weight: 500;
+                font-size: 14px;
+            }
+            
+            input {
+                padding: 12px;
+                border: 1px solid $border-color;
+                border-radius: 8px;
+                font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                
+                &:focus {
+                    outline: none;
+                    border-color: $primary-color;
+                    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+                }
+            }
+        }
+        
+        .predict-button {
+            margin-top: 10px;
+            padding: 12px;
+            background-color: $tertiary-color;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: $transition;
+            align-self: flex-end;
+            
+            &:hover {
+                background-color: darken($tertiary-color, 10%);
+            }
+        }
+    }
+}
+
+// Métricas del modelo
+.model-section {
+    .model-metrics {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+        
+        .metric-card {
+            background-color: $background-dark;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+            
+            h4 {
+                font-size: 14px;
+                color: $text-light;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            
+            .metric-value {
+                font-size: 24px;
+                font-weight: 600;
+                color: $tertiary-color;
+                margin: 0;
+            }
+        }
+    }
+    
+    .learning-curve-chart {
+        height: 350px;
+    }
+}
+
+// Mensaje de no datos
+.no-data-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    p {
+        color: $text-light;
+        font-size: 16px;
+    }
+}
+
+// Estilos heredados para compatibilidad
+.title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.divider {
+    margin: 30px 0;
+    border: none;
+    border-top: 2px solid $border-color;
+}
+
+.report-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .chart-container {
+        width: 48%;
+        padding: 20px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: $shadow-md;
+        
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
