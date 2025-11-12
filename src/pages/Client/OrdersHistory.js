@@ -66,6 +66,35 @@ export function OrdersHistory() {
     onCreatePayment('CARD')
   }
 
+  const openBankingApp = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+    // Detectar Android
+    if (/android/i.test(userAgent)) {
+      // Intentar abrir la app de Pichincha en Android
+      window.location.href = 'intent://com.yellowpepper.pichincha#Intent;scheme=app;package=com.yellowpepper.pichincha;end';
+      
+      // Fallback a Play Store después de 2 segundos si la app no está instalada
+      setTimeout(() => {
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.yellowpepper.pichincha';
+      }, 2000);
+    } 
+    // Detectar iOS
+    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // Intentar abrir la app de Pichincha en iOS
+      window.location.href = 'pichincha://';
+      
+      // Fallback a App Store después de 2 segundos si la app no está instalada
+      setTimeout(() => {
+        window.location.href = 'https://apps.apple.com/ec/app/pichincha-banca-movil/id999191728';
+      }, 2000);
+    }
+    // Escritorio u otros dispositivos - abrir banca web
+    else {
+      window.open('https://bancaweb.pichincha.com/pichincha-app/', '_blank');
+    }
+  }
+
   return (
     <div>
       <h1>Historial de pedidos</h1>
@@ -113,9 +142,9 @@ export function OrdersHistory() {
           </div>
           <div>
             <p>O haga clic en el siguiente enlace para acceder a la aplicación de Banca Móvil:</p>
-            <a href="https://bancaweb.pichincha.com/pichincha-app/" target="_blank" rel="noopener noreferrer" className="ui button primary">
+            <button onClick={openBankingApp} className="ui button primary">
               Ir a Banca Móvil
-            </a>
+            </button>
           </div>
         </div>
       </ModalBasic>
