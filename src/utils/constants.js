@@ -1,4 +1,4 @@
-export const BASE_API = 'http://icard-api.xyz';
+export const BASE_API = 'https://icard-api.xyz';
 
 export const TOKEN = 'token';
 
